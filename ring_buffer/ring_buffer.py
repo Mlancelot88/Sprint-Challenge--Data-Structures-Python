@@ -13,5 +13,12 @@ class RingBuffer:
     else:
       self.current += 1
 
+
   def get(self):
-    pass
+    return [x for x in self.storage if x is not None]
+
+buffer = RingBuffer(3)
+buffer.append('a')
+buffer.append('b')
+buffer.append('c')
+print(buffer.get())
